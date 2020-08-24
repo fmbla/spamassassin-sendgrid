@@ -63,7 +63,7 @@ sub parsed_metadata {
 
   my $envfrom = $pms->get("EnvelopeFrom:addr", undef);
 
-  if($envfrom =~ /bounces\+(\d+)\-/) {
+  if($envfrom =~ /^bounces\+(\d+)\-/) {
     $sendgrid_id = $1;
     # dbg("ENVFROM: $envfrom ID: $sendgrid_id");
     if(defined $sendgrid_id) {
