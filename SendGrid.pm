@@ -32,7 +32,7 @@ Extract SendGrid ID from a message to the tag SENDGRID-ID, this tag can be used 
 =cut
 
 package Mail::SpamAssassin::Plugin::SendGrid;
-my $VERSION = 0.1;
+my $VERSION = 0.2;
 
 use strict;
 use Mail::SpamAssassin::Plugin;
