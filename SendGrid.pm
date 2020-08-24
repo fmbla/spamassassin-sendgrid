@@ -27,7 +27,7 @@ Sendgrid Sender Token
 
 =head1 DESCRIPTION
 
-Extract SendGrid ID from a message to the tag SENDGRID_ID, this tag can be used with other plugins, including askdns
+Extract SendGrid ID from a message to the tag SENDGRID-ID, this tag can be used with other plugins, including askdns
 
 =cut
 
@@ -67,7 +67,7 @@ sub parsed_metadata {
     $sendgrid_id = $1;
     # dbg("ENVFROM: $envfrom ID: $sendgrid_id");
     if(defined $sendgrid_id) {
-      $pms->set_tag('SENDGRID_ID', $sendgrid_id);
+      $pms->set_tag('SENDGRID-ID', $sendgrid_id);
     }
   }
 
