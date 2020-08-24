@@ -27,6 +27,8 @@ Sendgrid Sender Token
 
 =head1 DESCRIPTION
 
+Extract SendGrid ID from a message to the tag SENDGRID_ID, this tag can be used with other plugins, including askdns
+
 =cut
 
 package Mail::SpamAssassin::Plugin::SendGrid;
