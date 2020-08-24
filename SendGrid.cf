@@ -1,5 +1,5 @@
 ifplugin Mail::SpamAssassin::Plugin::SendGrid
 
-    askdns   SENDGRID_BL_ID _SENDGRID_ID_.your.bl.domain A 127.0.0.2
+    askdns   SENDGRID_BL_ID _SENDGRID-ID_.your.bl.domain A 127.0.0.2
 
 endif
