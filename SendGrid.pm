@@ -63,6 +63,19 @@ sub parsed_metadata {
 
   my $envfrom = $pms->get("EnvelopeFrom:addr", undef);
 
+  if ($envfrom) {
+    dbg("found Envelope-From in the headers");
+  } else {
+    my $relay = $pms->{relays_external}->[0];
+    if (defined $relay) {
+      $envfrom = $relay->{envfrom};
+      dbg("found Envelope-From in first external Received header");
+    } else {
+      dbg("could not find Envelope-From, exiting");
+      return;
+    }
+  }
+
   if($envfrom =~ /^bounces\+(\d+)\-/) {
     $sendgrid_id = $1;
     # dbg("ENVFROM: $envfrom ID: $sendgrid_id");
