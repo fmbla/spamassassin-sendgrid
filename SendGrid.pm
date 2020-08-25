@@ -32,7 +32,7 @@ Extract SendGrid ID from a message to the tag SENDGRIDID, this tag can be used w
 =cut
 
 package Mail::SpamAssassin::Plugin::SendGrid;
-my $VERSION = 0.5;
+my $VERSION = 0.6.1;
 
 use strict;
 use Mail::SpamAssassin::Plugin;
@@ -63,9 +63,7 @@ sub parsed_metadata {
 
   my $envfrom = $pms->get("EnvelopeFrom:addr", undef);
 
-  if ($envfrom) {
-    dbg("found Envelope-From in the headers");
-  } else {
+  if (not defined $envfrom) {
     my $relay = $pms->{relays_external}->[0];
     if (defined $relay) {
       $envfrom = $relay->{envfrom};
